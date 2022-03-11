@@ -1,10 +1,4 @@
-/* obszar 1
-napis sr c2a791
-imie itp e3d3c0, 000000, 221313
-paski 422418
-ikony 010000, 623c24
-strzalki ceb59c
-
+/*
 obszar 2
 rog lewy e3d3c0, 221313
 napis srodek efeeed
@@ -38,7 +32,7 @@ header {
 .selfie .container2 {
   display: flex;
   transform-style: preserve-3d;
-  animation: rotate 20s infinite linear;
+  animation: rotate 30s infinite linear;
 }
 
 @keyframes rotate {
@@ -59,7 +53,7 @@ header {
   position: absolute;
   left: var(--left);
   content: "I'm front-end developer! I'm also concept artist!";
-  font-size: 46px;
+  font-size: 30px;
   width: max-content;
   color: black;
 }
@@ -192,156 +186,7 @@ header {
   transform: translate(-50%, -50%);
 }
 
-/* .panel:nth-child(1) {
-    --left: 0px;
-    --angle: 0deg;
-  }
-
-  .panel:nth-child(2) {
-    --left: -77px;
-    --angle: 15deg;
-  }
-
-  .panel:nth-child(3) {
-    --left: -154px;
-    --angle: 30deg;
-  }
-
-  .panel:nth-child(4) {
-    --left: -231px;
-    --angle: 45deg;
-  }
-
-  .panel:nth-child(5) {
-    --left: -308px;
-    --angle: 60deg;
-  }
-
-  .panel:nth-child(6) {
-    --left: -385px;
-    --angle: 75deg;
-  }
-
-  .panel:nth-child(7) {
-    --left: -462px;
-    --angle: 90deg;
-  }
-
-  .panel:nth-child(8) {
-    --left: -539px;
-    --angle: 105deg;
-  }
-
-  .panel:nth-child(9) {
-    --left: -616px;
-    --angle: 120deg;
-  }
-
-  .panel:nth-child(10) {
-    --left: -693px;
-    --angle: 135deg;
-  }
-
-  .panel:nth-child(11) {
-    --left: -770px;
-    --angle: 150deg;
-  }
-
-  .panel:nth-child(12) {
-    --left: -847px;
-    --angle: 165deg;
-  }
-
-  .panel:nth-child(13) {
-    --left: -924px;
-    --angle: 180deg;
-  }
-
-  .panel:nth-child(14) {
-    --left: -1001px;
-    --angle: 195deg;
-  }
-
-  .panel:nth-child(15) {
-    --left: -1078px;
-    --angle: 210deg;
-  }
-
-  .panel:nth-child(16) {
-    --left: -1155px;
-    --angle: 225deg;
-  }
-
-  .panel:nth-child(17) {
-    --left: -1232px;
-    --angle: 240deg;
-  }
-
-  .panel:nth-child(18) {
-    --left: -1309px;
-    --angle: 255deg;
-  }
-
-  .panel:nth-child(19) {
-    --left: -1386px;
-    --angle: 270deg;
-  }
-
-  .panel:nth-child(20) {
-    --left: -1463px;
-    --angle: 285deg;
-  }
-
-  .panel:nth-child(21) {
-    --left: -1540px;
-    --angle: 300deg;
-  }
-
-  .panel:nth-child(22) {
-    --left: -1617px;
-    --angle: 315deg;
-  }
-
-  .panel:nth-child(23) {
-    --left: -1694px;
-    --angle: 330deg;
-  }
-
-  .panel:nth-child(24) {
-    --left: -1771px;
-    --angle: 345deg;
-  } */
-/* .selfie .fed {
-    margin: 40vh 26% 0 25vw;
-    overflow: hidden;
-    color: blue;
-    font-size: 42px;
-    white-space: nowrap;
-    letter-spacing: .2em;
-    border-right: 2px solid red;
-    animation:  writing 5s steps(50, end), 
-                blinking-line 1s step-end infinite;
-}
-
-.selfie .ca {
-    margin: 5vh 28% 0 25vw;
-    overflow: hidden;
-    color: blue;
-    font-size: 42px;
-    white-space: nowrap;
-    letter-spacing: .2em;
-    border-right: 2px solid red;
-    animation:  writing 5s 5s steps(50, end), 
-                blinking-line 1s step-end infinite;
-}
-
-@keyframes writing {
-    from { width: 0 } to { width: 50% }
-}
-
-@keyframes blinking-line {
-    from, to { border-color: transparent } 50% { border-color: red }
-} */
+/**************************  NAVIGATION  ***********************************/
 .nav {
   display: inline;
   width: 20%;
