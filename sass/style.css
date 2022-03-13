@@ -10,6 +10,7 @@ napis srodek efeeed
   --darkb: #422418;
   --bblack: #221313;
   --ts: #000;
+  --gradient: linear-gradient(60deg, #0000ff, #00ccff, #00ffcc, #00ff00, #66ff33, #ffff00, #ff6600, #ff66ff);
 }
 
 /****************************************  HEADER  ********************************/
@@ -333,8 +334,6 @@ header {
   margin: 25vh 0 0 12vw;
   width: 50vw;
   height: 50vh;
-  background-color: #623c24;
-  background-color: var(--semib);
 }
 
 .about .text-box .type {
@@ -342,14 +341,21 @@ header {
   color: #e3d3c0;
   color: var(--wwhite);
   font-size: 32px;
-  animation: writing 10s 2s linear;
+  line-height: 1.7;
+  background-size: 500%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-position: left;
+  background-image: var(--gradient);
+  animation: bg-anim 30s linear infinite alternate;
 }
 
-@keyframes writing {
-  from {
-    width: 0;
+@keyframes bg-anim {
+  0% {
+    background-position: left;
   }
-  to {
-    width: 100%;
+  100% {
+    background-position: right;
   }
 }
