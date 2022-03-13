@@ -34,12 +34,19 @@ $vars: (
     );
 }
 
-/****************************************  HEADER  ********************************/
+/****************************************  GLOBAL   ********************************/
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     @include var(background-color, lightb );
     margin: 0 auto;
     min-width: 1180px;
 }
+
+/****************************************  HEADER  ********************************/
 
 header {
     height: 100vh;
@@ -142,16 +149,24 @@ $width: 77.5px;
 }
 
 .icons i {
+    position: relative;
     @include var(color, bblack);
     font-size: 32px;
+    transition: 0.3s;
 }
 
 .icons a:hover i {
-    @include var(color, bblack);
+    color: rgba(0, 0, 0, 0.75);
     font-size: 38px;
+    animation: clr 1.5s ease-in-out;
+}
+
+@keyframes clr {
+    0% { @include var(color, bblack) } 100% { color: black }
 }
 
 .links a {
+    position: relative;
     display: block;
     margin: 70px 0;
     @include var(color, wwhite);
@@ -160,21 +175,39 @@ $width: 77.5px;
     text-shadow: 0.05em 0.05em 2px var(--ts), 0 0 1em var(--ts), 0 0 0.3em var(--ts);
     font-size: 40px;
     font-weight: 700;
+    transition: 0.5s;
 }
 
 .links a:hover {
     font-size: 46px;
 }
 
+.links a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--ts);
+    transform: scale(0);
+    transition: 1.5s;
+}
+
+.links a:hover::after {
+    transform: scale(0.5);
+}
+
 /*******************************  ARROWS  ********************************/
 
-.arrows {
+header .arrows {
     text-align: center;
     padding: 0px 0;
     border-top: 5px solid var(--darkb);
 }
 
-.arrows i {
+header .arrows i {
+    margin: 0 20px;
     @include var(color, wwhite);
     font-size: 30px;
     animation: slide1 ease 1.5s infinite;
@@ -185,7 +218,7 @@ $width: 77.5px;
     50% {transform: translate(0, 10px);}
 }
 
-.arrows i:hover {
+header .arrows i:hover {
     font-size: 34px;
 }
 
