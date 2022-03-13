@@ -4,17 +4,29 @@ rog lewy e3d3c0, 221313
 napis srodek efeeed
 */
 
-:root {
-    --white: #e3d3c0;
-    --lightb: #916037;
-    --semib: #623c24;
-    --darkb: #422418;
-    --black: #221313;
+$vars: (
+    wwhite: #e3d3c0,
+    lightb: #916037,
+    semib: #623c24,
+    darkb: #422418,
+    bblack: #221313,
+);
+
+@mixin var($varName, $variable) {      // creating css code, @includes in code
+    #{$varName}: map-get($vars, $variable); // create normal code, all browsers can read it
+    #{$varName}: var(--#{$variable})   
+}
+
+:root {         // create fallbacks for each var 
+    @each $varName, $value in $vars {       
+        --#{$varName}: #{$value};
+    };
+    --ts: #000;
 }
 
 /****************************************  HEADER  ********************************/
 body {
-    background-color: var(--lightb);
+    @include var(background-color, lightb );
     margin: 0 auto;
     min-width: 1180px;
 }
@@ -30,7 +42,7 @@ header {
 .selfie {
     width: 80%;
     height: 95vh;
-    background-color: var(--semib);
+    @include var(background-color, semib);
     border-right: 5px solid var(--darkb);
     display: grid;
     place-items: center;
@@ -68,7 +80,7 @@ $width: 77.5px;
     content: "I'm front-end developer! I'm also concept artist!";
     font-size: 30px;
     width: max-content;
-    color: var(--black);
+    @include var(color, bblack)
 }
 
 @for $i from 0 to 24 {
@@ -94,9 +106,9 @@ $width: 77.5px;
 }
 
 .nav h1{
-    color: var(--white);
+    @include var(color, wwhite);
     text-align: center;
-    text-shadow: 0.05em 0.05em 2px var(--black), 0 0 1em var(--black), 0 0 0.3em var(--black);
+    text-shadow: 0.05em 0.05em 2px var(--ts), 0 0 1em var(--ts), 0 0 0.3em var(--ts);
     font-size: 60px;
 }
 
@@ -114,28 +126,28 @@ $width: 77.5px;
     height: 50px;
     width: 50px;
     margin: 10px 0;
-    background-color: var(--semib);
+    @include var(background-color, semib);
     border-radius: 50%;
     text-decoration: none;
 }
 
 .icons i {
-    color: var(--black);
+    @include var(color, bblack);
     font-size: 32px;
 }
 
 .icons a:hover i {
-    color: var(--black);
+    @include var(color, bblack);
     font-size: 38px;
 }
 
 .links a {
     display: block;
     margin: 70px 0;
-    color: var(--white);
+    @include var(color, wwhite);
     text-align: center;
     text-decoration: none;
-    text-shadow: 0.05em 0.05em 2px var(--black), 0 0 1em var(--black), 0 0 0.3em var(--black);
+    text-shadow: 0.05em 0.05em 2px var(--ts), 0 0 1em var(--ts), 0 0 0.3em var(--ts);
     font-size: 40px;
     font-weight: 700;
 }
@@ -153,7 +165,7 @@ $width: 77.5px;
 }
 
 .arrows i {
-    color: var(--white);
+    @include var(color, wwhite);
     font-size: 30px;
     animation: slide1 ease 1.5s infinite;
 }
@@ -180,7 +192,7 @@ $width: 77.5px;
     align-items: center;
     height: 10vh;
     width: 0vw;
-    background-color: var(--white);
+    @include var(background-color, wwhite);
     border-radius: 30px;
     transition-duration: 2s;
 }
@@ -198,7 +210,7 @@ $width: 77.5px;
 }
 
 .about:hover .am .subtitle {
-    color: var(--black);
+    @include var(color, bblack);
     font-size: 48px;
 }
 
@@ -207,12 +219,12 @@ $width: 77.5px;
     margin: 25vh 0 0 12vw;
     width: 50vw;
     height: 50vh;
-    background-color: var(--semib);
+    @include var(background-color, semib);
 }
 
 .about .text-box .type {
     overflow: hidden;
-    color: var(--white);
+    @include var(color, wwhite);
     font-size: 32px;
     animation: writing 10s 2s linear;
 }

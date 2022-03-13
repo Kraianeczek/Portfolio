@@ -4,15 +4,17 @@ rog lewy e3d3c0, 221313
 napis srodek efeeed
 */
 :root {
-  --white: #e3d3c0;
+  --wwhite: #e3d3c0;
   --lightb: #916037;
   --semib: #623c24;
   --darkb: #422418;
-  --black: #221313;
+  --bblack: #221313;
+  --ts: #000;
 }
 
 /****************************************  HEADER  ********************************/
 body {
+  background-color: #916037;
   background-color: var(--lightb);
   margin: 0 auto;
   min-width: 1180px;
@@ -29,6 +31,7 @@ header {
 .selfie {
   width: 80%;
   height: 95vh;
+  background-color: #623c24;
   background-color: var(--semib);
   border-right: 5px solid var(--darkb);
   display: grid;
@@ -68,7 +71,8 @@ header {
   content: "I'm front-end developer! I'm also concept artist!";
   font-size: 30px;
   width: max-content;
-  color: var(--black);
+  color: #221313;
+  color: var(--bblack);
 }
 
 .panel:nth-child(1) {
@@ -206,9 +210,10 @@ header {
 }
 
 .nav h1 {
-  color: var(--white);
+  color: #e3d3c0;
+  color: var(--wwhite);
   text-align: center;
-  text-shadow: 0.05em 0.05em 2px var(--black), 0 0 1em var(--black), 0 0 0.3em var(--black);
+  text-shadow: 0.05em 0.05em 2px var(--ts), 0 0 1em var(--ts), 0 0 0.3em var(--ts);
   font-size: 60px;
 }
 
@@ -226,28 +231,32 @@ header {
   height: 50px;
   width: 50px;
   margin: 10px 0;
+  background-color: #623c24;
   background-color: var(--semib);
   border-radius: 50%;
   text-decoration: none;
 }
 
 .icons i {
-  color: var(--black);
+  color: #221313;
+  color: var(--bblack);
   font-size: 32px;
 }
 
 .icons a:hover i {
-  color: var(--black);
+  color: #221313;
+  color: var(--bblack);
   font-size: 38px;
 }
 
 .links a {
   display: block;
   margin: 70px 0;
-  color: var(--white);
+  color: #e3d3c0;
+  color: var(--wwhite);
   text-align: center;
   text-decoration: none;
-  text-shadow: 0.05em 0.05em 2px var(--black), 0 0 1em var(--black), 0 0 0.3em var(--black);
+  text-shadow: 0.05em 0.05em 2px var(--ts), 0 0 1em var(--ts), 0 0 0.3em var(--ts);
   font-size: 40px;
   font-weight: 700;
 }
@@ -264,7 +273,8 @@ header {
 }
 
 .arrows i {
-  color: var(--white);
+  color: #e3d3c0;
+  color: var(--wwhite);
   font-size: 30px;
   animation: slide1 ease 1.5s infinite;
 }
@@ -294,7 +304,8 @@ header {
   align-items: center;
   height: 10vh;
   width: 0vw;
-  background-color: var(--white);
+  background-color: #e3d3c0;
+  background-color: var(--wwhite);
   border-radius: 30px;
   transition-duration: 2s;
 }
@@ -312,7 +323,8 @@ header {
 }
 
 .about:hover .am .subtitle {
-  color: var(--black);
+  color: #221313;
+  color: var(--bblack);
   font-size: 48px;
 }
 
@@ -321,12 +333,14 @@ header {
   margin: 25vh 0 0 12vw;
   width: 50vw;
   height: 50vh;
+  background-color: #623c24;
   background-color: var(--semib);
 }
 
 .about .text-box .type {
   overflow: hidden;
-  color: var(--white);
+  color: #e3d3c0;
+  color: var(--wwhite);
   font-size: 32px;
   animation: writing 10s 2s linear;
 }
