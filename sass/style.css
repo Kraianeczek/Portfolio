@@ -4,13 +4,13 @@ rog lewy e3d3c0, 221313
 napis srodek efeeed
 */
 :root {
-  --wwhite: #e3d3c0;
-  --lightb: #916037;
-  --semib: #623c24;
+  --wwhite: #f7f3ee;
+  --lightb: #d5af90;
+  --semib: #ba7245;
   --darkb: #422418;
   --bblack: #221313;
   --ts: #000;
-  --gradient: linear-gradient(60deg, #0000ff, #00ccff, #00ffcc, #00ff00, #66ff33, #ffff00, #ff6600, #ff66ff);
+  --gradient: linear-gradient(60deg, #0000b3, #7300e6, #990099, #cc0000);
 }
 
 /****************************************  GLOBAL   ********************************/
@@ -19,10 +19,74 @@ html {
 }
 
 body {
-  background-color: #916037;
+  background-color: #d5af90;
   background-color: var(--lightb);
   margin: 0 auto;
   min-width: 1180px;
+}
+
+.rest-containers {
+  display: flex;
+  height: 90vh;
+}
+
+.about, .skills {
+  height: 95vh;
+}
+
+.am-box, .skill-box, .portfolio-box, .contact-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 0vw;
+  background-color: #f7f3ee;
+  background-color: var(--wwhite);
+  border-radius: 30px;
+  transition-duration: 2s;
+}
+
+.subtitle {
+  font-size: 0px;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+}
+
+/*******************************  ARROWS  ********************************/
+.arrows {
+  height: calc(5vh - 5px);
+  text-align: center;
+  padding: 0;
+  border-top: 5px dotted var(--semib);
+}
+
+.arrows .fa-angle-double-down {
+  margin: 0 20px;
+  color: #f7f3ee;
+  color: var(--wwhite);
+  font-size: 30px;
+  animation: slide1 ease-in-out 1.5s 0s infinite;
+}
+
+.arrows .fa-angle-double-up {
+  margin: 0 20px;
+  color: #f7f3ee;
+  color: var(--wwhite);
+  font-size: 30px;
+  animation: slide1 ease-in-out 1.5s 0.5s infinite;
+}
+
+@keyframes slide1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+}
+
+.arrows i:hover {
+  font-size: 34px;
 }
 
 /****************************************  HEADER  ********************************/
@@ -30,16 +94,14 @@ header {
   height: 100vh;
 }
 
-.container {
+.top-container {
   display: flex;
+  height: 95vh;
 }
 
 .selfie {
   width: 80%;
-  height: 95vh;
-  background-color: #623c24;
-  background-color: var(--semib);
-  border-right: 5px solid var(--darkb);
+  border-right: 5px solid var(--semib);
   display: grid;
   place-items: center;
   perspective: 500px;
@@ -205,7 +267,7 @@ header {
   position: absolute;
   width: 600px;
   height: 200px;
-  background-image: linear-gradient(90deg, transparent, #623c24, #623c24, #623c24, #623c24, transparent);
+  background-image: linear-gradient(90deg, transparent, #d5af90, #d5af90, #d5af90, #d5af90, transparent);
   transform: translate(-50%, -50%);
 }
 
@@ -216,7 +278,7 @@ header {
 }
 
 .nav h1 {
-  color: #e3d3c0;
+  color: #f7f3ee;
   color: var(--wwhite);
   text-align: center;
   text-shadow: 0.05em 0.05em 2px var(--ts), 0 0 1em var(--ts), 0 0 0.3em var(--ts);
@@ -226,8 +288,8 @@ header {
 .icons {
   display: flex;
   justify-content: space-around;
-  border-top: 5px solid var(--darkb);
-  border-bottom: 5px solid var(--darkb);
+  border-top: 5px dotted var(--semib);
+  border-bottom: 5px dotted var(--semib);
 }
 
 .icons a {
@@ -237,7 +299,7 @@ header {
   height: 50px;
   width: 50px;
   margin: 10px 0;
-  background-color: #623c24;
+  background-color: #ba7245;
   background-color: var(--semib);
   border-radius: 50%;
   text-decoration: none;
@@ -271,7 +333,7 @@ header {
   position: relative;
   display: block;
   margin: 70px 0;
-  color: #e3d3c0;
+  color: #f7f3ee;
   color: var(--wwhite);
   text-align: center;
   text-decoration: none;
@@ -301,65 +363,14 @@ header {
   transform: scale(0.5);
 }
 
-/*******************************  ARROWS  ********************************/
-header .arrows {
-  text-align: center;
-  padding: 0px 0;
-  border-top: 5px solid var(--darkb);
-}
-
-header .arrows i {
-  margin: 0 20px;
-  color: #e3d3c0;
-  color: var(--wwhite);
-  font-size: 30px;
-  animation: slide1 ease 1.5s infinite;
-}
-
-@keyframes slide1 {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-}
-
-header .arrows i:hover {
-  font-size: 34px;
-}
-
 /*******************************  ABOUT  ********************************/
-.about {
-  display: flex;
-  height: 100vh;
-}
-
-.about .am {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  width: 0vw;
-  background-color: #e3d3c0;
-  background-color: var(--wwhite);
-  border-radius: 30px;
-  transition-duration: 2s;
-}
-
-.about:hover .am {
+.about:hover .am-box {
   margin-top: 30px;
   width: 35vw;
   border-radius: 30px;
 }
 
-.about .am .subtitle {
-  font-size: 0px;
-  transition-delay: 0.5s;
-  transition-duration: 1s;
-}
-
-.about:hover .am .subtitle {
+.about:hover .am-box .subtitle {
   color: #221313;
   color: var(--bblack);
   font-size: 48px;
@@ -374,7 +385,7 @@ header .arrows i:hover {
 
 .about .text-box .type {
   overflow: hidden;
-  color: #e3d3c0;
+  color: #f7f3ee;
   color: var(--wwhite);
   font-size: 32px;
   line-height: 1.7;
@@ -384,7 +395,7 @@ header .arrows i:hover {
   color: transparent;
   background-position: left;
   background-image: var(--gradient);
-  animation: bg-anim 30s linear infinite alternate;
+  animation: bg-anim 15s linear infinite alternate;
 }
 
 @keyframes bg-anim {
@@ -394,4 +405,85 @@ header .arrows i:hover {
   100% {
     background-position: right;
   }
+}
+
+.about img {
+  position: absolute;
+  height: 40%;
+  left: 90vw;
+  border: 2px solid #000;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 2s ease-out;
+}
+
+.about:hover img {
+  transform: scale(1);
+  left: 75vw;
+}
+
+/*************************************  SKILLS  ********************************/
+.skills:hover .skill-box {
+  margin-top: 30px;
+  width: 35vw;
+  border-radius: 30px;
+}
+
+.skills:hover .skill-box .subtitle {
+  color: #221313;
+  color: var(--bblack);
+  font-size: 48px;
+}
+
+.skills .img-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin: 0 10vw;
+}
+
+.skills ul {
+  margin-top: 25vh;
+  list-style-type: none;
+}
+
+.skills li {
+  margin: 5px;
+}
+
+.skills img {
+  width: 10vw;
+  margin: 15px;
+}
+
+.skills li h2 {
+  text-align: center;
+  color: #f7f3ee;
+  color: var(--wwhite);
+}
+
+/*************************************  PORTFOLIO  ********************************/
+.portfolio:hover .portfolio-box {
+  margin-top: 30px;
+  width: 35vw;
+  border-radius: 30px;
+}
+
+.portfolio:hover .portfolio-box .subtitle {
+  color: #221313;
+  color: var(--bblack);
+  font-size: 48px;
+}
+
+/*************************************  CONTACT  ********************************/
+.contact:hover .contact-box {
+  margin-top: 30px;
+  width: 35vw;
+  border-radius: 30px;
+}
+
+.contact:hover .contact-box .subtitle {
+  color: #221313;
+  color: var(--bblack);
+  font-size: 48px;
 }
